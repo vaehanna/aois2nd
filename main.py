@@ -119,13 +119,6 @@ class LogicFunction:
         self.num_sknf = self.num_sknf[:-1]
         print("\nNum SKNF function:", self.num_sknf)
 
-    def print_index_form(self):
-        bin_index_form = ""
-        for i in self.table:
-            bin_index_form += str(i["f"])
-        self.index_form = self.from_bin_to_decimal(bin_index_form)
-        print("\nIndex form:", self.index_form)
-
     def __init__(self, formula):
         if self.check(formula):
             reverse_polish_notation = self.convert(formula)
@@ -181,7 +174,6 @@ class LogicFunction:
             self.print_bin_num_sknf()
             self.print_num_sdnf()
             self.print_num_sknf()
-            self.print_index_form()
         else:
             print("Invalid input")
 
